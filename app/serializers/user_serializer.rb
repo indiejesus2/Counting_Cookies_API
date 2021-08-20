@@ -1,6 +1,6 @@
 class UserSerializer
     include FastJsonapi::ObjectSerializer
-    attributes :id, :name, :target
+    attributes :id, :username, :name, :target
     has_many :records
     # has_many :days, through: :records
     attribute :records do |user|
