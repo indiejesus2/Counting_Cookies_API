@@ -1,5 +1,5 @@
 class AddRecordRefToDailyRecords < ActiveRecord::Migration[6.0]
   def change
-    add_reference :days, :records, foreign_key: true
+    add_foreign_key :days, :records
   end
 end
