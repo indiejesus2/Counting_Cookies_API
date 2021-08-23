@@ -4,7 +4,7 @@ class Api::V1::RecordsController < ApplicationController
 
     before_action :set_user
     before_action :set_record, only: [:show, :edit, :update, :destroy]
-    wrap_parameters :record, include: [:user_id, :date, :vote, :item_name, :item_calories]
+    wrap_parameters :record, include: [:user_id, :date, :item_name, :item_calories]
 
     def index
         if (@user.records)
@@ -31,11 +31,7 @@ class Api::V1::RecordsController < ApplicationController
     end
 
     def update
-        if @record.vote != record_params[:vote]
-            @record.vote = record_params[:vote]
-            @record.save
-            render json: RecordSerializer.new(@record)
-        elsif (!!params[:item_name])
+        if (!!params[:item_name])
             @record.days.create(day_params)
             @record.allowance
             @record.save

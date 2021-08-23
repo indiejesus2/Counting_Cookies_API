@@ -3,7 +3,7 @@ class DailyRecords < ActiveRecord::Migration[6.0]
     create_table :days do |t|
       t.string :item_name
       t.integer :item_calories
-      t.belongs_to :records, null: false, foreign_key: :record_id
+      t.references :record, index: true
       t.timestamps
     end
   end
