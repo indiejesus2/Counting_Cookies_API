@@ -12,7 +12,7 @@ class Api::V1::DaysController < ApplicationController
     private
 
     def set_date
-        @record =  Record.find(params[:record_id])
+        @record = Record.find(params[:record_id])
     end
 
     def set_item

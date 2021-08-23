@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     before_action :authorized
 
    def jwt_key
-    Rails.application.credentials.jwt_key
+    ENV['SESSION_SECRET']
    end
 
    def issue_token(user)
@@ -19,7 +19,6 @@ class ApplicationController < ActionController::Base
        end
    end
     def authorized
-        console.log(user_id)
        render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
    end
 
