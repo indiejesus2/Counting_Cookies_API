@@ -48,5 +48,5 @@ ActiveRecord::Schema.define(version: 2021_05_23_183210) do
     t.string "password_digest"
   end
 
-  add_foreign_key "days", "records", column: "record_id"
+  add_foreign_key "days", "records"
 end
