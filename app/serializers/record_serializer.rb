@@ -3,7 +3,7 @@ class RecordSerializer
     attributes :id, :date, :daily_allowance, :daily_total, :user_id, :vote
     has_many :days
     attribute :days do |record|
-        days = Day.where(record_id: record.id)
+        days = Day.where(records_id: record.id)
         recs = {} 
         days.each do |day|
             recs[:id] = day.id
