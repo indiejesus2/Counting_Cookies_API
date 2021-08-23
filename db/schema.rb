@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2021_05_23_183210) do
     t.integer "item_calories"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "records_id"
-    t.index ["records_id"], name: "index_days_on_records_id"
+    t.bigint "record_id"
+    t.index ["record_id"], name: "index_days_on_record_id"
   end
 
   create_table "records", force: :cascade do |t|
@@ -48,5 +48,5 @@ ActiveRecord::Schema.define(version: 2021_05_23_183210) do
     t.string "password_digest"
   end
 
-  add_foreign_key "days", "records", column: "records_id"
+  add_foreign_key "days", "records", column: "record_id"
 end
