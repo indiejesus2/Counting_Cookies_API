@@ -11,7 +11,6 @@ class UserSerializer
             records[:date] = record.date
             records[:daily_allowance] = record.daily_allowance
             records[:daily_total] = record.daily_total
-            records[:vote] = record.vote
         end
     end
 end
